@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!-- 目录页模板:复制后替换 {{...}},每篇文章一个 <li class="entry">。
+     按 Level 分两大节;各节内按 session 分组。 -->
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{CONF_NAME}} 论文导读 · 目录</title>
+<style>
+:root{--paper:#F6F7F4;--ink:#1A2332;--muted:#5C6672;--rule:#DDE1DA;
+      --card:#FFFFFF;--l1:#0F766E;--l2:#922D50}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);line-height:1.8;
+  font-family:"Noto Serif SC","Source Han Serif SC","Songti SC",SimSun,serif}
+main{max-width:46rem;margin:0 auto;padding:3.5rem 1.25rem 6rem}
+.eyebrow{font-family:"Noto Sans SC",sans-serif;font-size:.72rem;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+h1{font-size:2rem;margin:.6rem 0 .4rem}
+p.lede{color:var(--muted);margin:0 0 3rem}
+section.level{margin-top:3rem}
+h2{font-size:1.3rem;border-top:1px solid var(--rule);padding-top:1.4rem}
+h2 .badge{font-family:"Noto Sans SC",sans-serif;font-size:.7rem;color:#fff;
+  padding:.25em .7em;border-radius:2px;letter-spacing:.15em;vertical-align:.25em;margin-right:.6em}
+section.level.l1 .badge{background:var(--l1)} section.level.l2 .badge{background:var(--l2)}
+h3.session{font-family:"Noto Sans SC",sans-serif;font-size:.8rem;
+  letter-spacing:.18em;color:var(--muted);margin:2rem 0 .6rem;text-transform:uppercase}
+ul{list-style:none;margin:0;padding:0}
+li.entry{background:var(--card);border:1px solid var(--rule);border-radius:4px;
+  margin:.6rem 0;transition:border-color .15s}
+li.entry:hover{border-color:var(--ink)}
+li.entry a{display:block;padding:.85rem 1.1rem;color:inherit;text-decoration:none}
+li.entry .t{font-weight:700}
+li.entry .en{display:block;font-size:.85rem;font-style:italic;color:var(--muted)}
+li.entry .s{display:block;font-family:"Noto Sans SC",sans-serif;
+  font-size:.82rem;color:var(--muted);margin-top:.25rem}
+footer{margin-top:4rem;border-top:1px solid var(--rule);padding-top:1rem;
+  font-family:"Noto Sans SC",sans-serif;font-size:.8rem;color:var(--muted)}
+@media(max-width:640px){h1{font-size:1.6rem}}
+</style>
+</head>
+<body>
+<main>
+  <p class="eyebrow">{{CONF_NAME}} · {{CONF_DATES}} · 论文导读</p>
+  <h1>{{PAGE_TITLE}}</h1>
+  <p class="lede">面向密码学入门读者的会议论文导读。第一级侧重研究对象与动机;第二级深入算法细节与量化改进。</p>
+
+  <section class="level l1">
+    <h2><span class="badge">第一级</span>入门导读</h2>
+    <h3 class="session">{{SESSION_NAME}}</h3>
+    <ul>
+      <li class="entry"><a href="L1/{{FILE}}.html">
+        <span class="t">{{TITLE_ZH}}</span>
+        <span class="en">{{TITLE_EN}}</span>
+        <span class="s">{{AUTHORS_SHORT}} · 一句话简介</span>
+      </a></li>
+    </ul>
+  </section>
+
+  <section class="level l2">
+    <h2><span class="badge">第二级</span>深入解析</h2>
+    <!-- 同上结构 -->
+  </section>
+
+  <footer>由 Claude 根据论文原文与幻灯片撰写 · 数据来源:{{CONF_URL}}</footer>
+</main>
+</body>
+</html>

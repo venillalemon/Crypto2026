@@ -1,0 +1,416 @@
+{
+ "78": {
+  "level": 2,
+  "rule": "lattice",
+  "session": 6,
+  "title": "Tight Lattice-Based Signatures without Trapdoors from Search LWE"
+ },
+ "553": {
+  "level": 2,
+  "rule": "lattice",
+  "session": 6,
+  "title": "Preimage sampleable function families without discrete Gaussians"
+ },
+ "803": {
+  "level": 2,
+  "rule": "lattice",
+  "session": 6,
+  "title": "Toward a Secure Fixed-Point Implementation of the Falcon Signature Scheme"
+ },
+ "530": {
+  "level": 2,
+  "rule": "lattice(证明系统 straddle)",
+  "session": 6,
+  "title": "Orthus: Practical Sublinear Batch-Verification of Lattice Relations from Standard Assumptions"
+ },
+ "711": {
+  "level": 1,
+  "rule": "code-based",
+  "session": 9,
+  "title": "An attack on the CFS scheme and on TII McEliece challenges"
+ },
+ "425": {
+  "level": 1,
+  "rule": "isogeny",
+  "session": 9,
+  "title": "CORAL: Faster Isogeny Group Action for Post-Quantum NIKE"
+ },
+ "41": {
+  "level": 1,
+  "rule": "code-based",
+  "session": 12,
+  "title": "On the Distribution of the Distances of Random Words"
+ },
+ "90": {
+  "level": 1,
+  "rule": "code-based",
+  "session": 12,
+  "title": "Distinguishing Goppa codes using higher-order vanishing"
+ },
+ "307": {
+  "level": 1,
+  "rule": "code-based",
+  "session": 12,
+  "title": "Solving The Linear Equivalence Problem from Single Codeword Matching"
+ },
+ "473": {
+  "level": 1,
+  "rule": "code-based",
+  "session": 12,
+  "title": "One Pair to Rule Them All: Towards an Optimal Algorithm for Solving Code Equivalence via Codeword Search"
+ },
+ "865": {
+  "level": 2,
+  "rule": "lattice cryptanalysis",
+  "session": 16,
+  "title": "Careful with the Ring! Concrete Hardness Gaps Between LWE and MLWE"
+ },
+ "10": {
+  "level": 2,
+  "rule": "lattice cryptanalysis",
+  "session": 16,
+  "title": "Learning with Alternating Moduli, Arora-Ge over Composite Moduli, and Weak PRFs"
+ },
+ "306": {
+  "level": 2,
+  "rule": "lattice cryptanalysis",
+  "session": 16,
+  "title": "Halfspace Learning for Lattice Signature Key Recovery from Signs"
+ },
+ "187": {
+  "level": 2,
+  "rule": "lattice cryptanalysis",
+  "session": 20,
+  "title": "Cryptanalysis of Definite and Indefinite Lattice Isomorphism Problems With Applications to DEFI"
+ },
+ "235": {
+  "level": 2,
+  "rule": "lattice cryptanalysis",
+  "session": 20,
+  "title": "Exploiting the complexity of the Lattice Isomorphism Problem via Irreducible Decomposition"
+ },
+ "207": {
+  "level": 1,
+  "rule": "isogeny",
+  "session": 20,
+  "title": "Expander properties of superspecial isogeny digraphs with level structure"
+ },
+ "199": {
+  "level": 1,
+  "rule": "isogeny(timed crypto straddle)",
+  "session": 20,
+  "title": "Timed Commitments and Timed Encryption: Generic Constructions and Instantiations from Isogenies"
+ },
+ "632": {
+  "level": 2,
+  "rule": "other PQC(QROM证明)",
+  "session": 24,
+  "title": "Tighter Quantum Security for Fiat-Shamir-with-Aborts and Hash-and-Sign-with-Retry Signatures"
+ },
+ "539": {
+  "level": 2,
+  "rule": "other PQC(hash-based)",
+  "session": 24,
+  "title": "Shorter Hash-Based Signatures Using Forced Pruning"
+ },
+ "374": {
+  "level": 2,
+  "rule": "other PQC(多变量分析)",
+  "session": 24,
+  "title": "Key Recovery Attacks on UOV Using $p^\\ell$-truncated Polynomial Rings"
+ },
+ "502": {
+  "level": 1,
+  "rule": "code-based(QC-MDPC)",
+  "session": 24,
+  "title": "Efficient QC-MDPC Cryptosystems with Bounded Decoding Failure Rate"
+ },
+ "37": {
+  "level": 1,
+  "rule": "code-based(stabilizer straddle)",
+  "session": 24,
+  "title": "Post-Quantum Cryptography from Quantum Stabilizer Decoding"
+ },
+ "289": {
+  "level": 1,
+  "rule": "MPC/PCG",
+  "session": 35,
+  "title": "Block-Accumulate Codes: Accelerated Linear Codes for PCGs and ZK"
+ },
+ "461": {
+  "level": 1,
+  "rule": "MPC/PCG",
+  "session": 35,
+  "title": "Fast PCGs for Batch-Authenticated Multiplication Triples"
+ },
+ "457": {
+  "level": 1,
+  "rule": "MPC/PCG",
+  "session": 35,
+  "title": "Dishonest-Majority Secure Computation via PIR-Authenticated Multiplication Triples"
+ },
+ "541": {
+  "level": 1,
+  "rule": "MPC/PCG",
+  "session": 35,
+  "title": "Post-Quantum Public-Key Pseudorandom Correlation Functions for OT"
+ },
+ "145": {
+  "level": 1,
+  "rule": "quantum crypto",
+  "session": 36,
+  "title": "Multi-Copy Security in Quantum Cryptography and More"
+ },
+ "369": {
+  "level": 1,
+  "rule": "quantum crypto",
+  "session": 36,
+  "title": "Less is More: On Copy Complexity in Quantum Cryptography"
+ },
+ "490": {
+  "level": 1,
+  "rule": "quantum crypto",
+  "session": 36,
+  "title": "Uncloneable Cryptography in Linear Quantum Memory"
+ },
+ "595": {
+  "level": 1,
+  "rule": "quantum crypto",
+  "session": 36,
+  "title": "Unclonable Encryption in the Haar Random Oracle Model"
+ },
+ "709": {
+  "level": 1,
+  "rule": "quantum crypto",
+  "session": 36,
+  "title": "Public-Key Quantum Fire and Key-Fire From Classical Oracles"
+ },
+ "508": {
+  "level": 1,
+  "rule": "MPC",
+  "session": 39,
+  "title": "Multiparty Computation with Minimal Overhead without Circuit Transformation"
+ },
+ "577": {
+  "level": 1,
+  "rule": "MPC",
+  "session": 39,
+  "title": "Just-in-Time-OPRFs and a Modular Framework for Fast Private Set Intersection"
+ },
+ "740": {
+  "level": 1,
+  "rule": "MPC",
+  "session": 39,
+  "title": "Oblivious Priority Queue and Single-Source Shortest Path in the External-Memory Setting"
+ },
+ "397": {
+  "level": 1,
+  "rule": "quantum crypto",
+  "session": 40,
+  "title": "How to Delete Without a Trace: Certified Deniability in a Quantum World"
+ },
+ "233": {
+  "level": 1,
+  "rule": "quantum crypto",
+  "session": 40,
+  "title": "Constant-Rate Certified Deletion"
+ },
+ "335": {
+  "level": 1,
+  "rule": "quantum crypto",
+  "session": 40,
+  "title": "A Unified Approach to Quantum Key Leasing with a Classical Lessor"
+ },
+ "656": {
+  "level": 1,
+  "rule": "quantum crypto",
+  "session": 40,
+  "title": "Private Proofs of When and Where"
+ },
+ "673": {
+  "level": 1,
+  "rule": "MPC",
+  "session": 43,
+  "title": "Round-Optimal Black-Box MPC in the Plain Model from Minimal Assumptions"
+ },
+ "586": {
+  "level": 1,
+  "rule": "MPC",
+  "session": 43,
+  "title": "Linear Secret-shared Shuffle with Malicious Security"
+ },
+ "500": {
+  "level": 1,
+  "rule": "MPC",
+  "session": 43,
+  "title": "Towards Practical Committee Sizes in YOSO MPC"
+ },
+ "61": {
+  "level": 1,
+  "rule": "quantum crypto",
+  "session": 44,
+  "title": "Cryptomania v.s. Minicrypt in a Quantum World"
+ },
+ "424": {
+  "level": 1,
+  "rule": "quantum crypto",
+  "session": 44,
+  "title": "Scalable, quantum-accessible, and adaptive pseudorandom quantum state and pseudorandom function-like quantum state generators"
+ },
+ "788": {
+  "level": 1,
+  "rule": "quantum crypto",
+  "session": 44,
+  "title": "On Scalable Pseudorandom Unitaries and the Unitary Synthesis Problem"
+ },
+ "375": {
+  "level": 1,
+  "rule": "quantum crypto",
+  "session": 44,
+  "title": "Anonymous Public-Key Quantum Money and Universally Verifiable Quantum Voting"
+ },
+ "653": {
+  "level": 1,
+  "rule": "garbling",
+  "session": 47,
+  "title": "SIMD HSS and aHMAC from Interval Encoding with Application to One-Bit-Per-Gate Garbling"
+ },
+ "389": {
+  "level": 1,
+  "rule": "garbling",
+  "session": 47,
+  "title": "Suffix-Invariant Programmable PRFs and Applications to Stacked Garbling"
+ },
+ "381": {
+  "level": 1,
+  "rule": "garbling",
+  "session": 47,
+  "title": "Dishonest Majority Multi-Party Arithmetic Garbling with Constant Rate"
+ },
+ "116": {
+  "level": 2,
+  "rule": "quantum cryptanalysis",
+  "session": 48,
+  "title": "Classical and Quantum Full Plaintext Recovery for Low-Round Feistel-Type Designs"
+ },
+ "685": {
+  "level": 2,
+  "rule": "quantum lower bound",
+  "session": 48,
+  "title": "The Impossibility of Post‑Quantum Public Indifferentiability for Merkle-Damgard"
+ },
+ "593": {
+  "level": 2,
+  "rule": "quantum algorithm",
+  "session": 48,
+  "title": "An Improved Quantum Algorithm for 3-Tuple Lattice Sieving"
+ },
+ "138": {
+  "level": 1,
+  "rule": "FHE",
+  "session": 55,
+  "title": "Multi-key Fully Homomorphic Encryption with Non-Interactive Setup in the Plain Model"
+ },
+ "751": {
+  "level": 1,
+  "rule": "FHE",
+  "session": 55,
+  "title": "Fully-Succinct Multi-Key FHE & Rate-1 Simulatable Threshold Decryption from LWE"
+ },
+ "32": {
+  "level": 1,
+  "rule": "FHE",
+  "session": 55,
+  "title": "FHE for SIMD Arithmetic Logic Units with Amortized O(1) Bootstrapping per Ciphertext"
+ },
+ "301": {
+  "level": 1,
+  "rule": "FHE",
+  "session": 55,
+  "title": "SMOOTHIE: (Multi-)Scalar Multiplication Optimisations On TFHE"
+ },
+ "522": {
+  "level": 1,
+  "rule": "FHE",
+  "session": 55,
+  "title": "High-Precision Exact FHE Made Simple, General, and Fast"
+ },
+ "444": {
+  "level": 1,
+  "rule": "foundations",
+  "session": 56,
+  "title": "Beyond Quadratic: Unlocking Pseudorandomness with Quartic Character"
+ },
+ "706": {
+  "level": 1,
+  "rule": "foundations",
+  "session": 56,
+  "title": "Achieving Shannon Capacity for Computationally Bounded Errors"
+ },
+ "785": {
+  "level": 1,
+  "rule": "foundations",
+  "session": 56,
+  "title": "Chosen Ciphertext Secure Pseudorandom Codes in the Standard Model"
+ },
+ "799": {
+  "level": 1,
+  "rule": "foundations",
+  "session": 56,
+  "title": "A Unifying Umbrella for Circular-Secure Cryptographic Primitives"
+ },
+ "603": {
+  "level": 1,
+  "rule": "foundations",
+  "session": 56,
+  "title": "On the UC-(In)Security of PAKE Protocols Without the Random Oracle Model"
+ },
+ "383": {
+  "level": 1,
+  "rule": "FHE",
+  "session": 60,
+  "title": "New Techniques for Fast and Shallow FHE Bootstrapping and Beyond"
+ },
+ "202": {
+  "level": 1,
+  "rule": "FHE",
+  "session": 60,
+  "title": "Fully Homomorphic Encryption for Matrix Arithmetic"
+ },
+ "438": {
+  "level": 1,
+  "rule": "FHE",
+  "session": 60,
+  "title": "Efficient Bootstrapping in Fully Homomorphic Encryption for Matrix Arithmetic"
+ },
+ "720": {
+  "level": 1,
+  "rule": "FHE",
+  "session": 60,
+  "title": "Fast Batch Matrix Multiplication in Ciphertexts"
+ },
+ "413": {
+  "level": 1,
+  "rule": "proof systems",
+  "session": 62,
+  "title": "Pairing-Based SNARGs with Two Group Elements"
+ },
+ "312": {
+  "level": 1,
+  "rule": "proof systems",
+  "session": 62,
+  "title": "Splitting Bilinear Groups: New Translations from Composite- to Prime-Order with Applications to Batch Arguments for NP"
+ },
+ "439": {
+  "level": 1,
+  "rule": "proof systems",
+  "session": 62,
+  "title": "On the Fiat--Shamir Security of Succinct Arguments from Functional Commitments"
+ },
+ "345": {
+  "level": 1,
+  "rule": "proof systems",
+  "session": 62,
+  "title": "A New Approach to Arguments of Quantum Knowledge"
+ }
+}

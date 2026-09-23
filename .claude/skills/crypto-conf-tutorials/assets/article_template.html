@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<!-- ============================================================
+  文章模板 · conf-paper-tutorials
+  用法:复制本文件,替换所有 {{...}} 占位符,删除不需要的示例组件。
+  组件库(按需取用,见 <body> 内示例):
+    .term      术语卡:首次出现的术语在此定义(签名组件,请多用)
+    .algo      算法框:编号步骤,输入/输出显式写出(Level 2 主力)
+    .compare   对比表:此前成果 vs 本文(Level 2 必备)
+    .takeaway  一句话带走(Level 1 结尾必备)
+    .note      旁注:补充说明、历史脉络
+  数学:行内 \( ... \),独立成行 \[ ... \](KaTeX 自动渲染)。
+============================================================ -->
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TITLE_ZH}} · {{CONF_NAME}} 论文导读</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body,{delimiters:[
+          {left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false}]});"></script>
+<style>
+:root{
+  --paper:#14181F; --ink:#E8E6DE; --muted:#98A1AC; --rule:#2A3340;
+  --card:#1B212B;  --mono-bg:#232B37;
+  --l1:#3EC5B2;    /* 青 — Level 1 入门导读(深色下提亮) */
+  --l2:#E07A9A;    /* 绛 — Level 2 深入解析(深色下提亮) */
+  --accent:var(--{{LEVEL_CLASS}}); /* LEVEL_CLASS 填 l1 或 l2 */
+}
+*{box-sizing:border-box}
+html{font-size:17px}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Noto Serif SC","Source Han Serif SC","Songti SC",SimSun,serif;
+  line-height:1.85; letter-spacing:.01em;
+  -webkit-font-smoothing:antialiased;
+}
+main{max-width:44rem; margin:0 auto; padding:0 1.25rem 6rem}
+a{color:var(--accent); text-decoration-thickness:1px; text-underline-offset:3px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+code,pre,.mono{font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.86em}
+code{background:var(--mono-bg); padding:.1em .35em; border-radius:3px}
+pre{background:var(--mono-bg); padding:1rem 1.2rem; overflow-x:auto; border-radius:4px; line-height:1.6}
+
+/* ---------- 页眉 ---------- */
+header.masthead{padding:3.5rem 0 0}
+.eyebrow{
+  font-family:"Noto Sans SC","Source Han Sans SC",-apple-system,sans-serif;
+  font-size:.72rem; letter-spacing:.22em; text-transform:uppercase;
+  color:var(--muted); display:flex; gap:.9em; align-items:center; flex-wrap:wrap;
+}
+.badge{
+  color:#10151C; background:var(--accent); letter-spacing:.14em;
+  padding:.22em .7em; border-radius:2px; font-weight:600;
+}
+h1.title-zh{font-size:1.9rem; line-height:1.4; margin:1rem 0 .3rem; font-weight:700}
+p.title-en{font-size:1rem; color:var(--muted); font-style:italic; margin:0 0 1rem}
+.byline{
+  font-family:"Noto Sans SC",sans-serif; font-size:.85rem; color:var(--muted);
+  border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);
+  padding:.7rem 0; margin:1.4rem 0 2.5rem;
+}
+.byline b{color:var(--ink); font-weight:600}
+
+/* ---------- 正文结构 ---------- */
+h2{
+  font-size:1.28rem; margin:3rem 0 1rem; padding-top:1.2rem; font-weight:700;
+  border-top:1px solid var(--rule);
+}
+h2 .no{color:var(--accent); font-family:"Noto Sans SC",sans-serif;
+  font-size:.78rem; letter-spacing:.2em; display:block; margin-bottom:.35rem}
+h3{font-size:1.05rem; margin:2rem 0 .6rem}
+p{margin:0 0 1.1rem}
+em{font-style:normal; font-weight:600; color:var(--accent)} /* 强调即着色 */
+figure{margin:1.6rem 0}
+figcaption{font-family:"Noto Sans SC",sans-serif; font-size:.8rem; color:var(--muted); margin-top:.5rem}
+.katex-display{overflow-x:auto; padding:.2rem 0}
+
+/* ---------- 组件 ---------- */
+aside.term{
+  background:var(--card); border:1px solid var(--rule); border-left:3px solid var(--accent);
+  padding:.9rem 1.1rem; margin:1.4rem 0; border-radius:0 4px 4px 0;
+}
+aside.term .tag, .algo .tag, .note .tag{
+  font-family:"Noto Sans SC",sans-serif; font-size:.68rem; letter-spacing:.2em;
+  color:var(--accent); font-weight:700; display:block; margin-bottom:.3rem;
+}
+aside.term p, .note p{margin:0; font-size:.93rem; line-height:1.8}
+.note{background:transparent; border-left:3px solid var(--rule);
+  padding:.2rem 0 .2rem 1.1rem; margin:1.4rem 0; color:var(--muted); font-size:.93rem}
+.algo{background:var(--card); border:1px solid var(--rule); border-radius:4px;
+  padding:1rem 1.3rem; margin:1.6rem 0}
+.algo .io{font-family:"Noto Sans SC",sans-serif; font-size:.85rem; margin:.2rem 0}
+.algo ol{margin:.6rem 0 .2rem; padding-left:1.4rem}
+.algo li{margin:.4rem 0}
+table.compare{
+  width:100%; border-collapse:collapse; margin:1.6rem 0;
+  font-family:"Noto Sans SC",sans-serif; font-size:.88rem;
+}
+table.compare caption{font-size:.8rem; color:var(--muted); text-align:left; padding-bottom:.5rem}
+table.compare th{border-bottom:2px solid var(--ink); text-align:left; padding:.45rem .6rem}
+table.compare td{border-bottom:1px solid var(--rule); padding:.5rem .6rem; vertical-align:top}
+table.compare tr.this-work td{background:color-mix(in srgb,var(--accent) 7%,transparent); font-weight:600}
+.takeaway{
+  border:1.5px solid var(--accent); border-radius:4px; padding:1.1rem 1.3rem;
+  margin:2.5rem 0; font-size:1.02rem;
+}
+.takeaway .tag{font-family:"Noto Sans SC",sans-serif; font-size:.68rem;
+  letter-spacing:.2em; color:var(--accent); font-weight:700; display:block; margin-bottom:.4rem}
+
+/* ---------- 页脚 ---------- */
+footer.paper-info{
+  margin-top:4rem; border-top:1px solid var(--rule); padding-top:1.2rem;
+  font-family:"Noto Sans SC",sans-serif; font-size:.83rem; color:var(--muted);
+}
+footer.paper-info a{margin-right:1.2em}
+@media (max-width:640px){ html{font-size:16px} h1.title-zh{font-size:1.55rem} }
+@media print{ body{background:#fff;color:#1A2332} a{color:#1A2332} }
+</style>
+</head>
+<body>
+<main>
+
+<header class="masthead">
+  <p class="eyebrow">
+    <span class="badge">{{LEVEL_BADGE}}</span> <!-- 第一级 · 入门导读 / 第二级 · 深入解析 -->
+    <span>{{CONF_NAME}}</span>
+    <span>SESSION · {{SESSION_NAME}}</span>
+  </p>
+  <h1 class="title-zh">{{TITLE_ZH}}</h1>
+  <p class="title-en">{{TITLE_EN}}</p>
+  <div class="byline">
+    作者 <b>{{AUTHORS}}</b> · 导读面向密码学入门读者,由 Claude 根据论文原文与报告幻灯片撰写
+  </div>
+</header>
+
+<!-- ======== 以下为组件用法示例,写作时替换为真实内容 ======== -->
+
+<h2><span class="no">§1 · 研究什么</span>{{SECTION_HEADING}}</h2>
+<p>正文段落。首次出现的术语这样处理:<em>格 (lattice)</em>,并紧跟一张术语卡。</p>
+
+<aside class="term">
+  <span class="tag">术语 · LATTICE</span>
+  <p><b>格 (lattice)</b>:\(\mathbb{R}^n\) 中一组线性无关向量的所有整系数线性组合构成的离散点集,
+  记作 \(\mathcal{L}(\mathbf{B})=\{\mathbf{B}\mathbf{z}: \mathbf{z}\in\mathbb{Z}^n\}\)。</p>
+</aside>
+
+<div class="note">
+  <span class="tag">旁注</span>
+  <p>补充背景、历史脉络或与课程知识的联系,放在这里,不打断主线。</p>
+</div>
+
+<div class="algo">
+  <span class="tag">算法 · {{ALGO_NAME}}</span>
+  <p class="io"><b>输入:</b>……　<b>输出:</b>……</p>
+  <ol>
+    <li>第一步(每步交代操作对象与结果)。</li>
+    <li>第二步。</li>
+  </ol>
+</div>
+
+<table class="compare">
+  <caption>与既有成果的对比(数字须来自论文原文,注明出处章节)</caption>
+  <thead><tr><th>方案</th><th>年份/出处</th><th>关键指标</th><th>备注</th></tr></thead>
+  <tbody>
+    <tr><td>既有方案 A</td><td>…</td><td>…</td><td>…</td></tr>
+    <tr class="this-work"><td>本文</td><td>{{CONF_NAME}}</td><td>…</td><td>…</td></tr>
+  </tbody>
+</table>
+
+<div class="takeaway">
+  <span class="tag">一句话带走</span>
+  {{TAKEAWAY_SENTENCE}}
+</div>
+
+<footer class="paper-info">
+  <p>会议场次:{{SESSION_NAME}} · {{DAY_TIME}}</p>
+  <p>
+    <a href="{{EPRINT_URL}}">ePrint 原文</a>
+    <a href="{{SLIDES_URL}}">报告幻灯片</a>
+    <a href="index.html">← 返回目录</a>
+  </p>
+</footer>
+
+</main>
+</body>
+</html>

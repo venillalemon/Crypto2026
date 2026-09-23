@@ -1,0 +1,10 @@
+# Downloaded binaries (re-fetchable: eprint/arXiv via dl_papers.py, slides via current.json URLs)
+paper/
+slides/
+
+# macOS
+.DS_Store
+
+# local scratch
+*.pyc
+__pycache__/

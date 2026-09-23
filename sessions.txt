@@ -1,0 +1,107 @@
+
+session-06  Lattice-Based Cryptography
+  L2  #78   [lattice] Tight Lattice-Based Signatures without Trapdoors from Search LWE
+  L2  #553  [lattice] Preimage sampleable function families without discrete Gaussians
+  L2  #803  [lattice] Toward a Secure Fixed-Point Implementation of the Falcon Signature Scheme
+  L2  #530  [lattice(证明系统 straddle)] Orthus: Practical Sublinear Batch-Verification of Lattice Relations from Standard Assumptions
+
+session-09  Best Papers Plenary
+  L1  #711  [code-based] An attack on the CFS scheme and on TII McEliece challenges
+  L1  #425  [isogeny] CORAL: Faster Isogeny Group Action for Post-Quantum NIKE
+
+session-12  Code-based Cryptanalysis
+  L1  #41   [code-based] On the Distribution of the Distances of Random Words
+  L1  #90   [code-based] Distinguishing Goppa codes using higher-order vanishing
+  L1  #307  [code-based] Solving The Linear Equivalence Problem from Single Codeword Matching
+  L1  #473  [code-based] One Pair to Rule Them All: Towards an Optimal Algorithm for Solving Code Equivalence via Codeword Search
+
+session-16  Lattice Cryptanalysis I
+  L2  #865  [lattice cryptanalysis] Careful with the Ring! Concrete Hardness Gaps Between LWE and MLWE
+  L2  #10   [lattice cryptanalysis] Learning with Alternating Moduli, Arora-Ge over Composite Moduli, and Weak PRFs
+  L2  #306  [lattice cryptanalysis] Halfspace Learning for Lattice Signature Key Recovery from Signs
+
+session-20  Lattice Cryptanalysis II + Isogenies
+  L2  #187  [lattice cryptanalysis] Cryptanalysis of Definite and Indefinite Lattice Isomorphism Problems With Applications to DEFI
+  L2  #235  [lattice cryptanalysis] Exploiting the complexity of the Lattice Isomorphism Problem via Irreducible Decomposition
+  L1  #207  [isogeny] Expander properties of superspecial isogeny digraphs with level structure
+  L1  #199  [isogeny(timed crypto straddle)] Timed Commitments and Timed Encryption: Generic Constructions and Instantiations from Isogenies
+
+session-24  Post-Quantum Cryptography
+  L2  #632  [other PQC(QROM证明)] Tighter Quantum Security for Fiat-Shamir-with-Aborts and Hash-and-Sign-with-Retry Signatures
+  L2  #539  [other PQC(hash-based)] Shorter Hash-Based Signatures Using Forced Pruning
+  L2  #374  [other PQC(多变量分析)] Key Recovery Attacks on UOV Using $p^\ell$-truncated Polynomial Rings
+  L1  #502  [code-based(QC-MDPC)] Efficient QC-MDPC Cryptosystems with Bounded Decoding Failure Rate
+  L1  #37   [code-based(stabilizer straddle)] Post-Quantum Cryptography from Quantum Stabilizer Decoding
+
+session-35  MPC and Pseudorandom Correlation Generators
+  L1  #289  [MPC/PCG] Block-Accumulate Codes: Accelerated Linear Codes for PCGs and ZK
+  L1  #461  [MPC/PCG] Fast PCGs for Batch-Authenticated Multiplication Triples
+  L1  #457  [MPC/PCG] Dishonest-Majority Secure Computation via PIR-Authenticated Multiplication Triples
+  L1  #541  [MPC/PCG] Post-Quantum Public-Key Pseudorandom Correlation Functions for OT
+
+session-36  Quantum Cryptography I
+  L1  #145  [quantum crypto] Multi-Copy Security in Quantum Cryptography and More
+  L1  #369  [quantum crypto] Less is More: On Copy Complexity in Quantum Cryptography
+  L1  #490  [quantum crypto] Uncloneable Cryptography in Linear Quantum Memory
+  L1  #595  [quantum crypto] Unclonable Encryption in the Haar Random Oracle Model
+  L1  #709  [quantum crypto] Public-Key Quantum Fire and Key-Fire From Classical Oracles
+
+session-39  Multi-party Computation I
+  L1  #508  [MPC] Multiparty Computation with Minimal Overhead without Circuit Transformation
+  L1  #577  [MPC] Just-in-Time-OPRFs and a Modular Framework for Fast Private Set Intersection
+  L1  #740  [MPC] Oblivious Priority Queue and Single-Source Shortest Path in the External-Memory Setting
+
+session-40  Quantum Cryptography II
+  L1  #397  [quantum crypto] How to Delete Without a Trace: Certified Deniability in a Quantum World
+  L1  #233  [quantum crypto] Constant-Rate Certified Deletion
+  L1  #335  [quantum crypto] A Unified Approach to Quantum Key Leasing with a Classical Lessor
+  L1  #656  [quantum crypto] Private Proofs of When and Where
+
+session-43  Multi-party Computation II
+  L1  #673  [MPC] Round-Optimal Black-Box MPC in the Plain Model from Minimal Assumptions
+  L1  #586  [MPC] Linear Secret-shared Shuffle with Malicious Security
+  L1  #500  [MPC] Towards Practical Committee Sizes in YOSO MPC
+
+session-44  Quantum Cryptography III
+  L1  #61   [quantum crypto] Cryptomania v.s. Minicrypt in a Quantum World
+  L1  #424  [quantum crypto] Scalable, quantum-accessible, and adaptive pseudorandom quantum state and pseudorandom function-like quantum state generators
+  L1  #788  [quantum crypto] On Scalable Pseudorandom Unitaries and the Unitary Synthesis Problem
+  L1  #375  [quantum crypto] Anonymous Public-Key Quantum Money and Universally Verifiable Quantum Voting
+
+session-47  Garbling
+  L1  #653  [garbling] SIMD HSS and aHMAC from Interval Encoding with Application to One-Bit-Per-Gate Garbling
+  L1  #389  [garbling] Suffix-Invariant Programmable PRFs and Applications to Stacked Garbling
+  L1  #381  [garbling] Dishonest Majority Multi-Party Arithmetic Garbling with Constant Rate
+
+session-48  Quantum Algorithms and Lower Bounds
+  L2  #116  [quantum cryptanalysis] Classical and Quantum Full Plaintext Recovery for Low-Round Feistel-Type Designs
+  L2  #685  [quantum lower bound] The Impossibility of Post‑Quantum Public Indifferentiability for Merkle-Damgard
+  L2  #593  [quantum algorithm] An Improved Quantum Algorithm for 3-Tuple Lattice Sieving
+
+session-55  Homomorphic Encryption I
+  L1  #138  [FHE] Multi-key Fully Homomorphic Encryption with Non-Interactive Setup in the Plain Model
+  L1  #751  [FHE] Fully-Succinct Multi-Key FHE & Rate-1 Simulatable Threshold Decryption from LWE
+  L1  #32   [FHE] FHE for SIMD Arithmetic Logic Units with Amortized O(1) Bootstrapping per Ciphertext
+  L1  #301  [FHE] SMOOTHIE: (Multi-)Scalar Multiplication Optimisations On TFHE
+  L1  #522  [FHE] High-Precision Exact FHE Made Simple, General, and Fast
+
+session-56  Foundations II
+  L1  #444  [foundations] Beyond Quadratic: Unlocking Pseudorandomness with Quartic Character
+  L1  #706  [foundations] Achieving Shannon Capacity for Computationally Bounded Errors
+  L1  #785  [foundations] Chosen Ciphertext Secure Pseudorandom Codes in the Standard Model
+  L1  #799  [foundations] A Unifying Umbrella for Circular-Secure Cryptographic Primitives
+  L1  #603  [foundations] On the UC-(In)Security of PAKE Protocols Without the Random Oracle Model
+
+session-60  Homomorphic Encryption II
+  L1  #383  [FHE] New Techniques for Fast and Shallow FHE Bootstrapping and Beyond
+  L1  #202  [FHE] Fully Homomorphic Encryption for Matrix Arithmetic
+  L1  #438  [FHE] Efficient Bootstrapping in Fully Homomorphic Encryption for Matrix Arithmetic
+  L1  #720  [FHE] Fast Batch Matrix Multiplication in Ciphertexts
+
+session-62  Proof Systems IV
+  L1  #413  [proof systems] Pairing-Based SNARGs with Two Group Elements
+  L1  #312  [proof systems] Splitting Bilinear Groups: New Translations from Composite- to Prime-Order with Applications to Batch Arguments for NP
+  L1  #439  [proof systems] On the Fiat--Shamir Security of Succinct Arguments from Functional Commitments
+  L1  #345  [proof systems] A New Approach to Arguments of Quantum Knowledge
+
+合计: L1=54  L2=15  total=69
