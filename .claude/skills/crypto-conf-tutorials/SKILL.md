@@ -11,29 +11,13 @@ The reader is a **lower-year undergraduate who has just started cryptography** (
 
 ## Step 0 — Environment
 
-Scripts need only Python 3 stdlib. Reading PDFs needs `pdftotext` (`poppler-utils`) or `pip install pypdf`. Work in a project directory, e.g. `crypto2026/`.
+Scripts need only Python 3 stdlib. Reading PDFs needs `pdftotext` / `pdftoppm` / `pdfinfo` (poppler). Work at the repo root (this repo: `Crypto2026/`). There is no LibreOffice on this machine: `.pptx` slides can only be read by unzipping and pulling `<a:t>` text out of `ppt/slides/slide*.xml`; their diagrams are usually shapes, not images, so they cannot be rendered as figures — fall back to the paper's figures.
 
 ## Step 1 — Fetch & classify the program
 
-IACR conference sites render `program.php` client-side from `<base-url>/json/program.json` (schema: `days → timeslots → sessions → talks`). Do NOT scrape the HTML — fetch the JSON:
+**Status for CRYPTO 2026 (done 2026-08, do not redo):** the program JSON is saved as `current.json` at the repo root, the 69-paper classification as `classification.json`, and the human-readable review table (session → papers → level + matched rule) as `sessions.txt`. The user has confirmed the classification; treat `sessions.txt` as authoritative for which papers get an L1 or L2 note.
 
-```bash
-python scripts/fetch_program.py --base-url https://crypto.iacr.org/2026 --out crypto2026/
-```
-
-This writes `program.json`, `manifest.json`, and `sessions.txt` (a review table: every session, every paper, its assigned level and the rule that matched).
-
-**Show the classification table to the user and get confirmation before downloading.** The keyword rules are heuristics; session names vary by year and papers can straddle areas. Fix misclassifications with an overrides file, then re-run:
-
-```json
-// overrides.json — case-insensitive substring of paper or session title
-{ "watermark": 0, "Threshold ML-DSA": 1 }
-```
-```bash
-python scripts/fetch_program.py --base-url ... --out crypto2026/ --overrides overrides.json
-```
-
-If the user restricts scope further (specific days/sessions), set everything else to 0 via overrides.
+For a new conference: IACR sites render `program.php` client-side from `<base-url>/json/program.json` (schema: `days → timeslots → sessions → talks`; each talk has `paperId`, `title`, `authors`, `affiliations`, `eprint`, `slides`). Do NOT scrape the HTML — fetch the JSON. `scripts/fetch_program.py` is the reference implementation (`--base-url`, `--out`, `--overrides overrides.json`); it writes `program.json`, `manifest.json`, `sessions.txt`. **Show the classification table to the user and get confirmation before downloading.** Fix misclassifications with an overrides file (case-insensitive substring of paper or session title → level, 0 = skip).
 
 ### Classification rules (precedence matters — specific before general)
 
@@ -47,17 +31,23 @@ If the user restricts scope further (specific days/sessions), set everything els
 | 6 | foundations; FHE; MPC & garbling; threshold cryptography; proof systems / ZK / SNARKs; consensus | **1** |
 | 7 | everything else (symmetric-key cryptanalysis, side channels, real-world, …) | **skip** |
 
-The carve-outs exist because "PQC" broadly is Level 2 but its code-based and isogeny-based sub-areas are Level 1, and quantum *cryptography* (building things) is Level 1 while quantum *algorithms* (breaking things) is Level 2. When a paper genuinely straddles (e.g. lattice-based threshold signatures), classify by what the paper's *contribution* is about — read the abstract if unsure, and flag it to the user in the review table discussion.
+The carve-outs exist because "PQC" broadly is Level 2 but its code-based and isogeny-based sub-areas are Level 1, and quantum *cryptography* (building things) is Level 1 while quantum *algorithms* (breaking things) is Level 2. When a paper genuinely straddles (e.g. lattice-based threshold signatures, timed crypto from isogenies), classify by what the paper's *contribution* is about — read the abstract if unsure, and flag it to the user in the review table discussion.
 
 ## Step 2 — Download PDFs and slides
 
-```bash
-python scripts/download_assets.py crypto2026/manifest.json
+**Status for CRYPTO 2026 (done 2026-08):** all 18 selected sessions are downloaded. Actual layout (gitignored, ~320 MB):
+
+```
+paper/session-{NN}-{session-slug}/{paperId}-{title-slug}.pdf
+slides/session-{NN}-{session-slug}/{paperId}-{title-slug}.{pdf|pptx}
 ```
 
-Layout: `crypto2026/papers/L{1,2}/{id}-{slug}/{paper.pdf, slides.pdf, meta.json}` plus `download_report.json`. The script prefers ePrint (Springer links are paywalled), falls back to ePrint full-text search by title, and records misses instead of failing.
+The downloader is `dl_papers.py` at the repo root: sequential, rate-limit-aware (probes ePrint before starting; exits 2 if still rate limited), prefers `eprint` from the program JSON and has a `SUPPLEMENT` dict for papers whose ePrint link is missing from the program. Re-run it to pick up anything still missing; add manual ePrint URLs to `SUPPLEMENT`.
 
-For each `MISSING` paper: web-search `"<exact title>" eprint` or the authors' pages, download manually with `curl -A "Mozilla/5.0" -o paper.pdf <url>`, or tell the user which papers you could not obtain (they attended the conference and may have access). Retry specific papers with `--only 12,17`. Slides appear on the program gradually after the conference — mention that re-running later may pick up more.
+Slides: the program JSON's `slides` field is `null` even for talks whose slides exist. The IACR pattern is
+`https://iacr.org/submit/files/slides/2026/crypto/crypto2026/{paperId}/{paperId}_slides.{pdf|pptx}` — check with `curl -sI -A "Mozilla/5.0"` (200 vs 404) before linking a slides URL in a note; never write an unverified URL. Slides appear gradually after the conference — re-checking later may pick up more.
+
+`scripts/download_assets.py` is the older reference implementation with a different layout (`papers/L{1,2}/{id}-{slug}/`); it is kept for new conferences, not for this repo.
 
 ## Step 3 — Write the articles
 

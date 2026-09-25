@@ -1,6 +1,8 @@
 # Downloaded binaries (re-fetchable: eprint/arXiv via dl_papers.py, slides via current.json URLs)
 paper/
 slides/
+build/
+idea/
 
 # macOS
 .DS_Store
